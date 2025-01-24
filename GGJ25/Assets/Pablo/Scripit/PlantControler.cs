@@ -46,7 +46,7 @@ public class PlantControler : MonoBehaviour
                 Estado += avg.Type;
             }
 
-            Destroy(other);
+            Destroy(other.transform.gameObject);
         }  
     }
 }
