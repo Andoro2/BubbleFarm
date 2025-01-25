@@ -34,7 +34,6 @@ public class PlantControler : MonoBehaviour
     {
         if (other.CompareTag("Bubble"))
         {
-            Debug.Log("Hello");
 
             BubbleMovement avg = other.GetComponent<BubbleMovement>();
 
