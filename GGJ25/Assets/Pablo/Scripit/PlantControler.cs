@@ -29,13 +29,13 @@ public class PlantControler : MonoBehaviour
 
             if(avg.Type- 1 == Estado)
             {
-                Debug.Log("Growing");
+                //Debug.Log("Growing");
                 Estado++;
                 Body.ChangeImagen(Sprites[Estado]);
             }
             else if(avg.Type < 0)
             {
-                Debug.Log("Dying");
+                //Debug.Log("Dying");
                 Estado += avg.Type;
                 if (Estado < 0)
                 {

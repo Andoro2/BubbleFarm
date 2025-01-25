@@ -14,9 +14,10 @@ public class FanController : MonoBehaviour
     {
         if (SetDirectionTo)
         {
-            if (Input.GetButtonDown("Fire3"))
+            if (Input.GetButton("Fire3"))
             {
                 GetComponent<BoxCollider>().enabled = true;
+                Debug.Log("Fire Right");
             }
             else
             {
@@ -25,9 +26,10 @@ public class FanController : MonoBehaviour
         }
         else
         {
-            if (Input.GetButtonDown("Fire2"))
+            if (Input.GetButton("Fire2"))
             {
                 GetComponent<BoxCollider>().enabled = true;
+                Debug.Log("Fire Left");
             }
             else
             {
@@ -37,10 +39,18 @@ public class FanController : MonoBehaviour
 
         if (Input.GetButtonDown("Up"))
         {
-
+            if (transform.position.y < 5)
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+            }
+            Debug.Log(transform.position.y);
         }else if (Input.GetButtonDown("Down"))
         {
-
+            if (transform.position.y > 3)
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+            }
+            Debug.Log(transform.position.y);
         }
     }
     void OnTriggerEnter(Collider other)

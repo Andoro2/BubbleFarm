@@ -86,7 +86,7 @@ public class BubbleMovement : MonoBehaviour
 
         if(transform.position.y < Dyingheight){
             Shadow.transform.position = new Vector3(Shadow.transform.position.x, ShadowYValue, Shadow.transform.position.z);
-            Debug.Log("Ground");
+            //Debug.Log("Ground");
             Destroy(this.transform.gameObject);
         }
     }
