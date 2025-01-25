@@ -23,8 +23,8 @@ public class SightController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hitbarr = transform.GetChild(2).GetComponent<Slider>();
-        hitimage = transform.GetChild(1).GetComponent<Transform>();
+        hitbarr = transform.GetChild(0).GetChild(2).GetComponent<Slider>();
+        hitimage = transform.GetChild(0).GetChild(1).GetComponent<Transform>();
         hitbarr.value = 0.5f;
         right = true;
         ActualRangeMax = maxRange;

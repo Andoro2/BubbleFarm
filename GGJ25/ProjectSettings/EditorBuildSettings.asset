@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Metxa/MainMenu.unity
+    guid: 3eaf10461299a3946bf7d6eb3d91ca39
+  - enabled: 1
+    path: Assets/Metxa/TestScene.unity
+    guid: 1290ba8391485644db28a2f12855b8db
   m_configObjects: {}

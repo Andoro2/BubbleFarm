@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
-    public GameObject m_PauseMenu, m_DeathMenu;
+    public GameObject m_PauseMenu;//, m_DeathMenu;
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !m_DeathMenu.activeSelf)
+        if (Input.GetButtonDown("Pause"))// && !m_DeathMenu.activeSelf)
         {
             if (GameIsPaused)
             {
@@ -40,6 +40,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void RestartLevel()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void CloseApplication()

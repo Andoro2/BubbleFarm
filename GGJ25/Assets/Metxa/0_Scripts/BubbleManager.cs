@@ -23,8 +23,8 @@ public class BubbleManager : MonoBehaviour
         SpawnTimer -= Time.deltaTime;
         if(SpawnTimer < 0 )
         {
-            int[] possibleValues = { -3, 0, 3 };
-            Vector3 position = new Vector3(possibleValues[Random.Range(0, possibleValues.Length)], 11.5f, possibleValues[Random.Range(0, possibleValues.Length)]);
+            int[] possibleZValues = { -3, 0, 3 };
+            Vector3 position = new Vector3(Random.Range(-6, 6), 11.5f, possibleZValues[Random.Range(0, possibleZValues.Length)]);
             Instantiate(Bubble, position, Quaternion.identity);
             SpawnTimer = SpawnTime;
         }

@@ -5,17 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    public Animator m_ShipModelAnim;
-    public void NextScene()
+    //public Animator m_ShipModelAnim;
+    /*public void NextScene()
     {
         m_ShipModelAnim.SetTrigger("StartGame");
-    }
+    }*/
     public void Quit()
     {
         Application.Quit();
     }
-    public void OnEndStartGame()
+    public void StartGame()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene(1);
     }
 }
