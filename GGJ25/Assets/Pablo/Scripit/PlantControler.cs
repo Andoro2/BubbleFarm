@@ -9,6 +9,7 @@ public class PlantControler : MonoBehaviour
     private BoxCollider ColliderPlant;
     private BillboardController Body;
     private Rigidbody rig_;
+    public Vector3 SizeOfobject;
 
     // Start is called before the first frame update
     void Start()
