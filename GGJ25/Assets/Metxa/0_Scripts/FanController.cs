@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class FanController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public bool SetDirectionTo,
+        FanOn = false;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (FanOn)
+        {
+            GetComponent<BoxCollider>().enabled = true;
+        }
+        else
+        {
+            GetComponent<BoxCollider>().enabled = false;
+        }
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if (GetComponent<BoxCollider>().enabled)
+        {
+            if (other.gameObject.CompareTag("Bubble"))
+            {
+                Debug.Log("Bubel");
+                if (other.gameObject.GetComponent<BubbleMovement>().Direction != SetDirectionTo) other.gameObject.GetComponent<BubbleMovement>().Direction = SetDirectionTo;
+            }
+        }
     }
 }
