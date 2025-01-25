@@ -334,7 +334,11 @@ InputManager:
     altNegativeButton: 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     altPositiveButton: 
+=======
+    altPositiveButton: joystick button 1
+>>>>>>> Stashed changes
 =======
     altPositiveButton: joystick button 1
 >>>>>>> Stashed changes
