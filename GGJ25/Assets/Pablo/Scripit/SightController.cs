@@ -8,6 +8,11 @@ public class SightController : MonoBehaviour
     private Slider hitbarr;
     private bool right;
     public float speed;
+    public float coneAngle = 45f; // Ángulo del cono (en grados)
+    public float coneDistance = 10f; // Distancia máxima del cono
+    public int rayCount = 10; // Número de rayos dentro del cono
+    public ShotControler gun;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +24,12 @@ public class SightController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetButtonDown("Fire1")==true)
+        {
+            gun.timer = gun.TimeOfShot;
+        }
+        
+
         if (right)
         {
             hitbarr.value += speed;
