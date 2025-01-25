@@ -332,7 +332,11 @@ InputManager:
     negativeButton: 
     positiveButton: p
     altNegativeButton: 
+<<<<<<< Updated upstream
     altPositiveButton: 
+=======
+    altPositiveButton: joystick button 1
+>>>>>>> Stashed changes
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
