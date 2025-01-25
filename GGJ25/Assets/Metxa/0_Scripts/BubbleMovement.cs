@@ -33,21 +33,24 @@ public class BubbleMovement : MonoBehaviour
                 if (Random.Range(1, 4) < 1) Type++;
                 else Type--;
             }
+
+            int tmpType = Type * -1;
+
+            if (tmpType == 4)
+            {
+                BCitem.ChangeImagen(ItemSprites[tmpType + 2]);
+            }
+            else
+            {
+                BCitem.ChangeImagen(ItemSprites[tmpType + 3]);
+            }
+
+
         }
         else
         {
             BC.ChangeImagen(BubbleSprites[Random.Range(0, 3)]);
-        }
-
-        if (Type < 0)
-        {
-            int typetmp = Type;
-            typetmp *= -1;
-            typetmp += 4;
-        }
-        else
-        {
-            BCitem.ChangeImagen(ItemSprites[Type]);
+            BCitem.ChangeImagen(ItemSprites[Type-1]);
         }
 
         
@@ -63,7 +66,14 @@ public class BubbleMovement : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.down * DownSpeed * Time.deltaTime);
-        Shadow.transform.Translate(Vector3.up * DownSpeed * Time.deltaTime);
+        if(null == Shadow)
+        {
+            Shadow = transform.GetChild(2).transform.gameObject;
+        }
+        else
+        {
+            Shadow.transform.Translate(Vector3.up * DownSpeed * Time.deltaTime);
+        }
 
         if (Direction)
         {
@@ -74,7 +84,10 @@ public class BubbleMovement : MonoBehaviour
             transform.Translate(Vector3.left * SideSpeed * Time.deltaTime);
         }
 
-        if(transform.position.y < Dyingheight) Destroy(this.transform.gameObject);
-        Shadow.transform.position = new Vector3(Shadow.transform.position.x, ShadowYValue, Shadow.transform.position.z);
+        if(transform.position.y < Dyingheight){
+            Shadow.transform.position = new Vector3(Shadow.transform.position.x, ShadowYValue, Shadow.transform.position.z);
+            Debug.Log("Ground");
+            Destroy(this.transform.gameObject);
+        }
     }
 }

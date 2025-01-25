@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class FanController : MonoBehaviour
 {
-    public bool SetDirectionTo,
-        FanOn = false;
+    public bool SetDirectionTo;
     void Start()
     {
         
@@ -13,13 +12,35 @@ public class FanController : MonoBehaviour
 
     void Update()
     {
-        if (FanOn)
+        if (SetDirectionTo)
         {
-            GetComponent<BoxCollider>().enabled = true;
+            if (Input.GetButtonDown("Fire3"))
+            {
+                GetComponent<BoxCollider>().enabled = true;
+            }
+            else
+            {
+                GetComponent<BoxCollider>().enabled = false;
+            }
         }
         else
         {
-            GetComponent<BoxCollider>().enabled = false;
+            if (Input.GetButtonDown("Fire2"))
+            {
+                GetComponent<BoxCollider>().enabled = true;
+            }
+            else
+            {
+                GetComponent<BoxCollider>().enabled = false;
+            }
+        }
+
+        if (Input.GetButtonDown("Up"))
+        {
+
+        }else if (Input.GetButtonDown("Down"))
+        {
+
         }
     }
     void OnTriggerEnter(Collider other)

@@ -17,12 +17,7 @@ public class PlantControler : MonoBehaviour
         ColliderPlant = GetComponent<BoxCollider>();
         Body = GetComponentInChildren<BillboardController>();
         rig_ = GetComponent<Rigidbody>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Body.ChangeImagen(Sprites[Estado]);
     }
 
     private void OnTriggerEnter(Collider other)
