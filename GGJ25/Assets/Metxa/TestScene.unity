@@ -1407,6 +1407,9 @@ RectTransform:
   - {fileID: 157160503}
   - {fileID: 1676515449}
   - {fileID: 1017591394}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2379,12 +2382,15 @@ MonoBehaviour:
   timer: 0
   TimeOfShot: 20
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!4 &964631733 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5195426629127168435, guid: 38faeeefab9120b4ca1838d101537f09, type: 3}
   m_PrefabInstance: {fileID: 1607668453}
   m_PrefabAsset: {fileID: 0}
 =======
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1017591393
 GameObject:
   m_ObjectHideFlags: 0
@@ -2460,6 +2466,9 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017591393}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &1080869011
 GameObject:
