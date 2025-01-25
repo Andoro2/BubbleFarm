@@ -27,7 +27,7 @@ public class GamePlantsControler : MonoBehaviour
 
         if(tmpFinish/4 == plants.Count)
         {
-            //Fin Juego
+            //Juego superado
         }else if (tmpFinish <= 0)
         {
             if (time<0)
