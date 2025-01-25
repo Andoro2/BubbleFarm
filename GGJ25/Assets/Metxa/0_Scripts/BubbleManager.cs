@@ -24,7 +24,7 @@ public class BubbleManager : MonoBehaviour
         if(SpawnTimer < 0 )
         {
             int[] possibleValues = { -3, 0, 3 };
-            Vector3 position = new Vector3(possibleValues[Random.Range(0, possibleValues.Length)], 5.5f, possibleValues[Random.Range(0, possibleValues.Length)]);
+            Vector3 position = new Vector3(possibleValues[Random.Range(0, possibleValues.Length)], 11.5f, possibleValues[Random.Range(0, possibleValues.Length)]);
             Instantiate(Bubble, position, Quaternion.identity);
             SpawnTimer = SpawnTime;
         }
