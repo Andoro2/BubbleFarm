@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class BubbleMovement : MonoBehaviour
 {
     public int Type = 0;
-    public float BadnessChance = 5f,
+    public float BadnessChance = 2.5f,
         DownSpeed = 2f,  SideSpeed = 8f;
     public bool Direction = true; // true = derecha / false = izquierda
     public List<Sprite> BubbleSprites = new List<Sprite>();
@@ -14,12 +14,13 @@ public class BubbleMovement : MonoBehaviour
     public float GroundY = -5;
     BillboardController BC;
     BillboardController BCitem;
-    private GameObject Shadow;
+    private GameObject Shadow, Particula;
     private float ShadowYValue;
     public float Dyingheight;
 
     void Start()
     {
+        Particula = transform.GetChild(3).transform.gameObject;
         Type = Random.Range(1, 4);
 
         BC = transform.GetChild(0).GetComponent<BillboardController>();
@@ -27,7 +28,7 @@ public class BubbleMovement : MonoBehaviour
 
         if (Random.Range(1, 10) < BadnessChance)
         {
-            BC.ChangeImagen(BubbleSprites[Random.Range(3, 6)]);
+            BC.ChangeImagen(BubbleSprites[Random.Range(3, 6)]);//malo maloso
             Type *= -1;
             if (Type == -3)
             {
@@ -45,16 +46,12 @@ public class BubbleMovement : MonoBehaviour
             {
                 BCitem.ChangeImagen(ItemSprites[tmpType + 3]);
             }
-
-
         }
-        else
+        else// bueno buenoso
         {
             BC.ChangeImagen(BubbleSprites[Random.Range(0, 3)]);
             BCitem.ChangeImagen(ItemSprites[Type-1]);
         }
-
-        
 
         if (Random.Range(0,2) == 0) Direction = true;
         else Direction = false;
@@ -84,11 +81,10 @@ public class BubbleMovement : MonoBehaviour
         {
             transform.Translate(Vector3.left * SideSpeed * Time.deltaTime);
         }
-
-        if(transform.position.y < Dyingheight){
-            Shadow.transform.position = new Vector3(Shadow.transform.position.x, ShadowYValue, Shadow.transform.position.z);
-            //Debug.Log("Ground");
-            Destroy(this.transform.gameObject);
-        }
+    }
+    public void PopSystem()
+    {
+        Particula.SetActive(true);
+        Particula.transform.SetParent(null);
     }
 }

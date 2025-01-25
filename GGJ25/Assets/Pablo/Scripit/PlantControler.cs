@@ -27,6 +27,7 @@ public class PlantControler : MonoBehaviour
         {
 
             BubbleMovement avg = other.GetComponent<BubbleMovement>();
+            avg.PopSystem();
 
             if(avg.Type- 1 == Estado)
             {
