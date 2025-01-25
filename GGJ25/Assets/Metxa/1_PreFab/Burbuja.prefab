@@ -62,17 +62,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fcbe9dc8f88a54e40ba3977e36f4f1cc, type: 3}
   - {fileID: 21300000, guid: 823ad1082ff67584498b4ea284b4c43d, type: 3}
   ItemSprites:
-  - {fileID: 21300000, guid: 36adf59455badcf4b9c2e9151b18add3, type: 3}
+  - {fileID: 21300000, guid: 7af21b8f21e2e654bbde1b26408650c1, type: 3}
   - {fileID: 21300000, guid: 5649ba4508e7e7f40b89f465e1ea78c0, type: 3}
   - {fileID: 21300000, guid: 53d991ff5eaa1d348888af1ba63a49f9, type: 3}
-<<<<<<< Updated upstream
-  - {fileID: 21300000, guid: 36adf59455badcf4b9c2e9151b18add3, type: 3}
-  - {fileID: 21300000, guid: da330e2d044c5224e8b0eb3ce07c11c2, type: 3}
-=======
   - {fileID: 21300000, guid: cf10002a0d78d7445ba74c29b56aef1c, type: 3}
-  - {fileID: 21300000, guid: 80c1f8037b5ef5242a13a8e05d3c72ae, type: 3}
->>>>>>> Stashed changes
   - {fileID: 21300000, guid: 231048ea86f1b4e4b8efaa7e7a3e7faf, type: 3}
+  - {fileID: 21300000, guid: da330e2d044c5224e8b0eb3ce07c11c2, type: 3}
   - {fileID: 21300000, guid: 4af39a7679d964247b02d6e82eeea623, type: 3}
   GroundY: 0.5
   Dyingheight: 1.28
@@ -108,7 +103,7 @@ GameObject:
   - component: {fileID: 8881795373264861471}
   - component: {fileID: 9198325899504215338}
   - component: {fileID: 3591802435983508598}
-  - component: {fileID: 8789276512858609288}
+  - component: {fileID: 5965350025584443811}
   m_Layer: 0
   m_Name: ParticleSyst
   m_TagString: Untagged
@@ -1078,7 +1073,7 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 1
-      scalar: 0.25
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4928,7 +4923,7 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &8789276512858609288
+--- !u!114 &5965350025584443811
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5103,10 +5098,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemSprite
       objectReference: {fileID: 0}
-    - target: {fileID: 3075983684767641996, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4838685102219658281, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
@@ -5114,6 +5105,10 @@ PrefabInstance:
     - target: {fileID: 5046668684494155086, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
       propertyPath: m_Name
       value: ItemBillBoard
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046668684494155086, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9112898414763469720, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
       propertyPath: m_IsActive
@@ -5187,10 +5182,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BubbleSprite
       objectReference: {fileID: 0}
-    - target: {fileID: 3075983684767641996, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4838685102219658281, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
@@ -5198,6 +5189,10 @@ PrefabInstance:
     - target: {fileID: 5046668684494155086, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
       propertyPath: m_Name
       value: BubbleBillBoard
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046668684494155086, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9112898414763469720, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
       propertyPath: m_IsActive

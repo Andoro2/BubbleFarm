@@ -84,6 +84,7 @@ public class BubbleMovement : MonoBehaviour
     }
     public void PopSystem()
     {
+        Debug.Log("Tuputamadre");
         Particula.SetActive(true);
         Particula.transform.SetParent(null);
     }
