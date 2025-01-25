@@ -6,7 +6,14 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
+    private SightController hitter;
     public GameObject m_PauseMenu;//, m_DeathMenu;
+
+    private void Start()
+    {
+        hitter = GetComponent<SightController>();
+    }
+
     private void Update()
     {
         if (Input.GetButtonDown("Pause"))// && !m_DeathMenu.activeSelf)
@@ -26,12 +33,14 @@ public class PauseMenu : MonoBehaviour
         m_PauseMenu.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        hitter.stop = false;
     }
     void Pause()
     {
         m_PauseMenu.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        hitter.stop = true;
     }
     public void QuitGame()
     {
