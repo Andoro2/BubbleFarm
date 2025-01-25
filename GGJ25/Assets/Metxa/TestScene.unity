@@ -375,8 +375,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 9.25, y: 1, z: 9.25}
-  m_Center: {x: 5, y: 0, z: 0}
+  m_Size: {x: 16.228806, y: 1, z: 10.254072}
+  m_Center: {x: 4.673336, y: 0, z: 0.50203586}
 --- !u!4 &117619943
 Transform:
   m_ObjectHideFlags: 0
@@ -405,6 +405,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SetDirectionTo: 1
+  FanLeft: {fileID: 247316934}
+  FanRight: {fileID: 982364384}
+  FanIcon:
+  - {fileID: 21300000, guid: 96055ab3cebe29943b1daf2dd405dc10, type: 3}
+  - {fileID: 21300000, guid: e6806818f77a70b48ab19ca7870040a3, type: 3}
 --- !u!54 &117619945
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5136,6 +5141,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SetDirectionTo: 0
+  FanLeft: {fileID: 247316934}
+  FanRight: {fileID: 982364384}
+  FanIcon:
+  - {fileID: 21300000, guid: 96055ab3cebe29943b1daf2dd405dc10, type: 3}
+  - {fileID: 21300000, guid: e6806818f77a70b48ab19ca7870040a3, type: 3}
 --- !u!54 &1864131862
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5182,8 +5192,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 9.25, y: 1, z: 9.25}
-  m_Center: {x: -5, y: 0, z: 0}
+  m_Size: {x: 16.216877, y: 1, z: 10.233181}
+  m_Center: {x: -5.3123417, y: 0, z: 0.49159026}
 --- !u!4 &1864131864
 Transform:
   m_ObjectHideFlags: 0
