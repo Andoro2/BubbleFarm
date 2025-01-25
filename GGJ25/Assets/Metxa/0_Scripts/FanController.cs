@@ -1,51 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class FanController : MonoBehaviour
 {
     public bool SetDirectionTo;
-    public GameObject FanRight;
-    public GameObject FanLeft;
-    public List<Sprite> FanLogo;
-
-    private void Start()
-    {
-        FanRight.GetComponent<Image>().sprite = FanLogo[0];
-        FanLeft.GetComponent<Image>().sprite = FanLogo[0];
-    }
 
     void Update()
     {
         if (SetDirectionTo)
         {
-            if (Input.GetButtonDown("Fire2"))
+            if (Input.GetButton("Fire3"))
             {
-                GetComponent<BoxCollider>().enabled = !GetComponent<BoxCollider>().enabled;
-                if (GetComponent<BoxCollider>().enabled)
-                {
-                    FanLeft.GetComponent<Image>().sprite = FanLogo[1];
-                }
-                else
-                {
-                    FanLeft.GetComponent<Image>().sprite = FanLogo[0];
-                }
+                GetComponent<BoxCollider>().enabled = true;
+                Debug.Log("Fire Right");
+            }
+            else
+            {
+                GetComponent<BoxCollider>().enabled = false;
             }
         }
         else
         {
-            if (Input.GetButtonDown("Fire3"))
+            if (Input.GetButton("Fire2"))
             {
-                GetComponent<BoxCollider>().enabled = !GetComponent<BoxCollider>().enabled;
-                if (GetComponent<BoxCollider>().enabled)
-                {
-                    FanRight.GetComponent<Image>().sprite = FanLogo[1];
-                }
-                else
-                {
-                    FanRight.GetComponent<Image>().sprite = FanLogo[0];
-                }
+                GetComponent<BoxCollider>().enabled = true;
+                Debug.Log("Fire Left");
+            }
+            else
+            {
+                GetComponent<BoxCollider>().enabled = false;
             }
         }
 
