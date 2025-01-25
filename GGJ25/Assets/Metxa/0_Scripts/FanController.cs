@@ -58,7 +58,7 @@ public class FanController : MonoBehaviour
 
         if (Input.GetButtonDown("Up"))
         {
-            if (transform.position.y < 5)
+            if (transform.position.y < 7)
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
             }
