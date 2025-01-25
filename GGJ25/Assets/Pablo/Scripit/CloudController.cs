@@ -15,12 +15,12 @@ public class CloudController : MonoBehaviour
         if (Random.Range(0, 1) == 1)
         {
             right = true;
-            transform.position = new Vector3(-34, Random.Range(5, 10), 20);
+            transform.position = new Vector3(-40, Random.Range(5, 10), 18);
         }
         else
         {
             right = false;
-            transform.position = new Vector3(34,Random.Range(5,10),20);
+            transform.position = new Vector3(40,Random.Range(5,10),18);
         }
     }
 
@@ -35,18 +35,18 @@ public class CloudController : MonoBehaviour
             transform.position = new Vector3(transform.position.x - speed, transform.position.y, transform.position.z);
         }
 
-        if(transform.position.x < -34 || transform.position.x > 34)
+        if(transform.position.x < -42 || transform.position.x > 42)
         {
            sprites.sprite = clouds[Random.Range(0, 1)];
             if (Random.Range(0, 1) == 1)
             {
                 right = true;
-                transform.position = new Vector3(-34, Random.Range(5, 10), 20);
+                transform.position = new Vector3(-40, Random.Range(5, 10), 18);
             }
             else
             {
                 right = false;
-                transform.position = new Vector3(34, Random.Range(5, 10), 20);
+                transform.position = new Vector3(40, Random.Range(5, 10), 18);
             }
         }
     }
