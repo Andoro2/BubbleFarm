@@ -34,8 +34,11 @@ public class ShotControler : MonoBehaviour
 
                 if (Physics.Raycast(coneRay, out hit, coneDistance))
                 {
-                    Destroy(hit.transform.gameObject);
-                    Debug.DrawRay(coneOrigin, rayDirection * hit.distance, Color.green);
+                    if (hit.transform.CompareTag("Bubble"))
+                    {
+                        Destroy(hit.transform.gameObject);
+                        Debug.DrawRay(coneOrigin, rayDirection * hit.distance, Color.green);
+                    }
                 }
                 else
                 {

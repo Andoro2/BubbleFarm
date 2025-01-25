@@ -50,8 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   BadnessChance: 5
-  DownSpeed: 1.5
-  SideSpeed: 2
+  DownSpeed: 2
+  SideSpeed: 5
   Direction: 0
   BubbleSprites:
   - {fileID: 21300000, guid: 28693ba9d4eb52544a9024b933e259fa, type: 3}
