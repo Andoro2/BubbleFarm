@@ -5,10 +5,6 @@ using UnityEngine;
 public class FanController : MonoBehaviour
 {
     public bool SetDirectionTo;
-    void Start()
-    {
-        
-    }
 
     void Update()
     {

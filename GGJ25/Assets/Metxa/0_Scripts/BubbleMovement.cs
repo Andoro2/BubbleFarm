@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class BubbleMovement : MonoBehaviour
 {
-    public int Type = 0, BadnessChance = 5,
-        DownSpeed = 2,  SideSpeed = 8;
+    public int Type = 0;
+    public float BadnessChance = 5f,
+        DownSpeed = 2f,  SideSpeed = 8f;
     public bool Direction = true; // true = derecha / false = izquierda
     public List<Sprite> BubbleSprites = new List<Sprite>();
     public List<Sprite> ItemSprites = new List<Sprite>();
