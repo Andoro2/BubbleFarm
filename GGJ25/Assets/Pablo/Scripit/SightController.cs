@@ -14,6 +14,7 @@ public class SightController : MonoBehaviour
     public ShotControler gun;
     private Transform hitimage;
     public float minRange;
+    public bool stop;
     public float maxRange;
     public float ActualRangeMin;
     public float ActualRangeMax;
@@ -27,6 +28,7 @@ public class SightController : MonoBehaviour
         hitimage = transform.GetChild(0).GetChild(2).GetComponent<Transform>();
         hitbarr.value = 0.5f;
         right = true;
+        stop = false;
         ActualRangeMax = maxRange;
         ActualRangeMin = minRange;
         hitimage.transform.localScale = StartingScale;
@@ -56,20 +58,22 @@ public class SightController : MonoBehaviour
         }
         
 
-        if (right)
-        {
-            hitbarr.value += speed;
-            if (hitbarr.value >= 1.0f)
+        if(!stop){
+            if (right)
             {
-                right = false;
+                hitbarr.value += speed;
+                if (hitbarr.value >= 1.0f)
+                {
+                    right = false;
+                }
             }
-        }
-        else
-        {
-            hitbarr.value -= speed;
-            if (hitbarr.value <= 0.0f)
+            else
             {
-                right = true;
+                hitbarr.value -= speed;
+                if (hitbarr.value <= 0.0f)
+                {
+                    right = true;
+                }
             }
         }
     }
