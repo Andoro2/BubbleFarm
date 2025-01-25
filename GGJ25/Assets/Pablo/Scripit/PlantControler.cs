@@ -22,12 +22,7 @@ public class PlantControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Estado < 0)
-        {
-            Estado = 0;
-        }
-
-        Body.ChangeImagen(Sprites[Estado]);
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,10 +34,19 @@ public class PlantControler : MonoBehaviour
 
             if(avg.Type- 1 == Estado)
             {
+                Debug.Log("Growing");
                 Estado++;
-            }else if(avg.Type < 0)
+                Body.ChangeImagen(Sprites[Estado]);
+            }
+            else if(avg.Type < 0)
             {
+                Debug.Log("Dying");
                 Estado += avg.Type;
+                if (Estado < 0)
+                {
+                    Estado = 0;
+                }
+                Body.ChangeImagen(Sprites[Estado]);
             }
 
             Destroy(other.transform.gameObject);

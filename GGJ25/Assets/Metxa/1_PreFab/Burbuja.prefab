@@ -32,6 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6432584585743722715}
+  - {fileID: 220180026847083924}
   - {fileID: 4688846672316483419}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -51,7 +52,7 @@ MonoBehaviour:
   BadnessChance: 5
   DownSpeed: 2
   SideSpeed: 2
-  Direction: 1
+  Direction: 0
   BubbleSprites:
   - {fileID: 21300000, guid: 28693ba9d4eb52544a9024b933e259fa, type: 3}
   - {fileID: 21300000, guid: bbc8598f36099ea42a2ab89bd4c410e7, type: 3}
@@ -59,8 +60,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d4210129cb257c44cbadbdddb1c71d71, type: 3}
   - {fileID: 21300000, guid: fcbe9dc8f88a54e40ba3977e36f4f1cc, type: 3}
   - {fileID: 21300000, guid: 823ad1082ff67584498b4ea284b4c43d, type: 3}
-  ItemSprites: []
+  ItemSprites:
+  - {fileID: 21300000, guid: 7af21b8f21e2e654bbde1b26408650c1, type: 3}
+  - {fileID: 21300000, guid: 5649ba4508e7e7f40b89f465e1ea78c0, type: 3}
+  - {fileID: 21300000, guid: 53d991ff5eaa1d348888af1ba63a49f9, type: 3}
+  - {fileID: 21300000, guid: 4d91444cea119a748827107d4a6306ac, type: 3}
   GroundY: 0.5
+  Dyingheight: 1.28
 --- !u!65 &5300499390832652227
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -189,6 +195,86 @@ CapsuleCollider:
   m_Height: 0.1
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!1001 &2429833294538308874
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8866798256857394728}
+    m_Modifications:
+    - target: {fileID: 38656469618826896, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501393422884290718, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501393422884290718, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501393422884290718, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501393422884290718, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501393422884290718, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501393422884290718, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501393422884290718, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501393422884290718, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501393422884290718, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501393422884290718, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3075983684767641996, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+      propertyPath: m_Name
+      value: BubbleSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838685102219658281, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046668684494155086, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+      propertyPath: m_Name
+      value: ItemBillBoard
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112898414763469720, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 6156701361811931046, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+    - {fileID: 9112898414763469720, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+--- !u!224 &220180026847083924 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2501393422884290718, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+  m_PrefabInstance: {fileID: 2429833294538308874}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8931655701406427205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -251,7 +337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5046668684494155086, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
       propertyPath: m_Name
-      value: BillBoard
+      value: BubbleBillBoard
       objectReference: {fileID: 0}
     - target: {fileID: 9112898414763469720, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
       propertyPath: m_IsActive
@@ -260,6 +346,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 6156701361811931046, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+    - {fileID: 9112898414763469720, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}

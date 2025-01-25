@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5195426629127168435}
   - component: {fileID: 7980728035331807199}
   - component: {fileID: 5516008300592831240}
+  - component: {fileID: 3726949773894460015}
   m_Layer: 0
   m_Name: Plant
   m_TagString: Untagged
@@ -48,7 +49,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Estado: 0
   Sprites:
-  - {fileID: 2100000, guid: dfb3cba03a27ebd448a4ff288eab1d08, type: 2}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 7af21b8f21e2e654bbde1b26408650c1, type: 3}
+  - {fileID: 21300000, guid: 5649ba4508e7e7f40b89f465e1ea78c0, type: 3}
+  - {fileID: 21300000, guid: 53d991ff5eaa1d348888af1ba63a49f9, type: 3}
 --- !u!65 &5516008300592831240
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -70,6 +74,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &3726949773894460015
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8516490574308988652}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &3111890521527240675
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -123,12 +154,14 @@ PrefabInstance:
       value: BillBoard
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6156701361811931046, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+    - {fileID: 9112898414763469720, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
---- !u!4 &691614673997203325 stripped
-Transform:
+--- !u!224 &691614673997203325 stripped
+RectTransform:
   m_CorrespondingSourceObject: {fileID: 2501393422884290718, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
   m_PrefabInstance: {fileID: 3111890521527240675}
   m_PrefabAsset: {fileID: 0}

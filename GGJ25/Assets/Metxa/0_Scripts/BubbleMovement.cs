@@ -12,14 +12,17 @@ public class BubbleMovement : MonoBehaviour
     public List<Sprite> ItemSprites = new List<Sprite>();
     public float GroundY = -5;
     BillboardController BC;
+    BillboardController BCitem;
     private GameObject Shadow;
     private float ShadowYValue;
+    public float Dyingheight;
 
     void Start()
     {
         Type = Random.Range(1, 4);
 
         BC = transform.GetChild(0).GetComponent<BillboardController>();
+        BCitem = transform.GetChild(1).GetComponent<BillboardController>();
 
         if (Random.Range(1, 10) < BadnessChance)
         {
@@ -36,10 +39,23 @@ public class BubbleMovement : MonoBehaviour
             BC.ChangeImagen(BubbleSprites[Random.Range(0, 3)]);
         }
 
+        if (Type < 0)
+        {
+            int typetmp = Type;
+            typetmp *= -1;
+            typetmp += 4;
+        }
+        else
+        {
+            BCitem.ChangeImagen(ItemSprites[Type]);
+        }
+
+        
+
         if (Random.Range(0,2) == 0) Direction = true;
         else Direction = false;
 
-        Shadow = transform.GetChild(1).transform.gameObject;
+        Shadow = transform.GetChild(2).transform.gameObject;
         Shadow.transform.position = new Vector3(Shadow.transform.position.x, GroundY, Shadow.transform.position.z);
         ShadowYValue = Shadow.transform.position.y;
     }
@@ -48,6 +64,7 @@ public class BubbleMovement : MonoBehaviour
     {
         transform.Translate(Vector3.down * DownSpeed * Time.deltaTime);
         Shadow.transform.Translate(Vector3.up * DownSpeed * Time.deltaTime);
+
         if (Direction)
         {
             transform.Translate(Vector3.right * SideSpeed * Time.deltaTime);
@@ -57,7 +74,7 @@ public class BubbleMovement : MonoBehaviour
             transform.Translate(Vector3.left * SideSpeed * Time.deltaTime);
         }
 
-        if(transform.position.y < 0) Destroy(this.transform.gameObject);
+        if(transform.position.y < Dyingheight) Destroy(this.transform.gameObject);
         Shadow.transform.position = new Vector3(Shadow.transform.position.x, ShadowYValue, Shadow.transform.position.z);
     }
 }

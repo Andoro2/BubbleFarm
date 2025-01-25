@@ -12,13 +12,24 @@ public class SightController : MonoBehaviour
     public float coneDistance = 10f; // Distancia máxima del cono
     public int rayCount = 10; // Número de rayos dentro del cono
     public ShotControler gun;
+    private Transform hitimage;
+    public float minRange;
+    public float maxRange;
+    public float ActualRangeMin;
+    public float ActualRangeMax;
+    public float IntervalSpeedDescres;
+    public Vector3 StartingScale;
 
     // Start is called before the first frame update
     void Start()
     {
-        hitbarr = transform.GetChild(0).GetComponent<Slider>();
+        hitbarr = transform.GetChild(2).GetComponent<Slider>();
+        hitimage = transform.GetChild(1).GetComponent<Transform>();
         hitbarr.value = 0.5f;
         right = true;
+        ActualRangeMax = maxRange;
+        ActualRangeMin = minRange;
+        hitimage.transform.localScale = StartingScale;
     }
 
     // Update is called once per frame
@@ -26,7 +37,22 @@ public class SightController : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1")==true)
         {
-            gun.timer = gun.TimeOfShot;
+            if (hitbarr.value>ActualRangeMin && hitbarr.value<ActualRangeMax)
+            {
+                gun.timer = gun.TimeOfShot;
+                if (ActualRangeMin<0.3f && ActualRangeMax>0.7f)
+                {
+                    ActualRangeMax -= IntervalSpeedDescres;
+                    ActualRangeMin += IntervalSpeedDescres;
+                    hitimage.localScale = new Vector3(hitimage.localScale.x - ((IntervalSpeedDescres*StartingScale.x)/0.2f), StartingScale.y, StartingScale.z);
+
+                }
+            }
+            else {
+                ActualRangeMax = maxRange;
+                ActualRangeMin = minRange;
+                hitimage.transform.localScale = StartingScale;
+            }
         }
         
 
