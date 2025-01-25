@@ -9,11 +9,13 @@ public class FanController : MonoBehaviour
     public GameObject FanLeft;
     public GameObject FanRight;
     public List<Sprite> FanIcon;
-
+    private Animator FanAnim;
     private void Start()
     {
         FanRight.GetComponent<Image>().sprite = FanIcon[0];
         FanLeft.GetComponent<Image>().sprite = FanIcon[0];
+
+        FanAnim = transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Animator>();
     }
 
     void Update()
@@ -61,13 +63,23 @@ public class FanController : MonoBehaviour
                 transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
             }
             Debug.Log(transform.position.y);
-        }else if (Input.GetButtonDown("Down"))
+        }
+        else if (Input.GetButtonDown("Down"))
         {
             if (transform.position.y > 3)
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
             }
             Debug.Log(transform.position.y);
+        }
+
+        if (GetComponent<BoxCollider>().enabled)
+        {
+            FanAnim.SetBool("Enchufao", true);
+        }
+        else
+        {
+            FanAnim.SetBool("Enchufao", false);
         }
     }
     void OnTriggerEnter(Collider other)
