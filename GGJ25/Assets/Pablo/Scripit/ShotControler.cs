@@ -20,7 +20,7 @@ public class ShotControler : MonoBehaviour
     {
         if (timer>0)
         {
-            Vector3 coneOrigin = new Vector3(transform.position.x,transform.position.y+3,transform.position.z); // Origen del cono
+            Vector3 coneOrigin = new Vector3(transform.position.x,transform.position.y+1,transform.position.z); // Origen del cono
             Vector3 coneDirection = transform.forward; // Dirección central del cono
 
             for (int i = 0; i < raysCount; i++)
