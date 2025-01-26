@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589245, b: 0.2978263, a: 1}
+  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589246, b: 0.2978263, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -493,7 +493,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e6806818f77a70b48ab19ca7870040a3, type: 3}
   FanAnim: {fileID: 0}
   audio: {fileID: 0}
-  Move: {fileID: 8300000, guid: bc207b5d6aa0eb9448082aca9a1cf210, type: 3}
+  Move: {fileID: 8300000, guid: a388d37513afb6c4fa3d87ba221bf80a, type: 3}
 --- !u!54 &117619945
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1710,7 +1710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1e80ad7bbfc014186a3c9a3f577cdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.001
+  speed: 0.0045
   coneAngle: 45
   coneDistance: 10
   rayCount: 10
@@ -2247,7 +2247,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.74
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6851,7 +6851,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1812915972
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7201,7 +7201,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e6806818f77a70b48ab19ca7870040a3, type: 3}
   FanAnim: {fileID: 0}
   audio: {fileID: 0}
-  Move: {fileID: 8300000, guid: bc207b5d6aa0eb9448082aca9a1cf210, type: 3}
+  Move: {fileID: 8300000, guid: a388d37513afb6c4fa3d87ba221bf80a, type: 3}
 --- !u!54 &1864131862
 Rigidbody:
   m_ObjectHideFlags: 0
