@@ -43,6 +43,25 @@ public class FanController : MonoBehaviour
                 Debug.Log("Fire Right");
             }
 
+            if (Input.GetButtonDown("Up"))
+            {
+                if (transform.position.y < 7)
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                    audio.Effect(Move);
+                }
+                Debug.Log(transform.position.y);
+            }
+            else if (Input.GetButtonDown("Down"))
+            {
+                if (transform.position.y > 3)
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                    audio.Effect(Move);
+                }
+                Debug.Log(transform.position.y);
+            }
+
         }
         else
         {
@@ -60,26 +79,28 @@ public class FanController : MonoBehaviour
                 Debug.Log("Fire Left");
             }
 
+            if (Input.GetButtonDown("Up2") )
+            {
+                if (transform.position.y < 7)
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                    audio.Effect(Move);
+                }
+                Debug.Log(transform.position.y);
+            }
+            else if (Input.GetButtonDown("Down2"))
+            {
+                if (transform.position.y > 3)
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                    audio.Effect(Move);
+                }
+                Debug.Log(transform.position.y);
+            }
+
         }
 
-        if (Input.GetButtonDown("Up"))
-        {
-            if (transform.position.y < 7)
-            {
-                transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-                audio.Effect(Move);
-            }
-            Debug.Log(transform.position.y);
-        }
-        else if (Input.GetButtonDown("Down"))
-        {
-            if (transform.position.y > 3)
-            {
-                transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
-                audio.Effect(Move);
-            }
-            Debug.Log(transform.position.y);
-        }
+        
 
         if (GetComponent<BoxCollider>().enabled)
         {
