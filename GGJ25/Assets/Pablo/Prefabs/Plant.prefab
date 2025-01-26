@@ -53,6 +53,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f471630c24b76a3428bc823608f144e1, type: 3}
   - {fileID: 21300000, guid: 43465e55aa15afc4197ca922fd9556d0, type: 3}
   - {fileID: 21300000, guid: a5fe436f72736b541b8729ebe399d08d, type: 3}
+  SizeOfobject: {x: 0, y: 0, z: 0}
+  audioGrow: {fileID: 8300000, guid: caab567cb7ab8f14a98e316c71c6fcad, type: 3}
+  audioDamage: {fileID: 8300000, guid: f2f098e0b88ae794d941b9c978a7b62f, type: 3}
+  audioDeath: {fileID: 8300000, guid: a8e2fff258edcfb43b12f18d116d4db0, type: 3}
 --- !u!65 &5516008300592831240
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -152,6 +156,22 @@ PrefabInstance:
     - target: {fileID: 5046668684494155086, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
       propertyPath: m_Name
       value: BillBoard
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693976071268685998, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693976071268685998, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693976071268685998, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693976071268685998, guid: e334f35e1aa621b4990fb727749bbed8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

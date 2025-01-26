@@ -9,12 +9,16 @@ public class FanController : MonoBehaviour
     public GameObject FanLeft;
     public GameObject FanRight;
     public List<Sprite> FanIcon;
-    private Animator FanAnim;
+    public Animator FanAnim;
+    public AudioManager audio;
+    public AudioClip Move;
+    //public AudioClip Wint;
+
     private void Start()
     {
         FanRight.GetComponent<Image>().sprite = FanIcon[0];
         FanLeft.GetComponent<Image>().sprite = FanIcon[0];
-
+        audio = GameObject.Find("AudioSource").GetComponent<AudioManager>();
         FanAnim = transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Animator>();
     }
 
@@ -61,6 +65,7 @@ public class FanController : MonoBehaviour
             if (transform.position.y < 7)
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                audio.Effect(Move);
             }
             Debug.Log(transform.position.y);
         }
@@ -69,6 +74,7 @@ public class FanController : MonoBehaviour
             if (transform.position.y > 3)
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                audio.Effect(Move);
             }
             Debug.Log(transform.position.y);
         }
@@ -76,6 +82,7 @@ public class FanController : MonoBehaviour
         if (GetComponent<BoxCollider>().enabled)
         {
             FanAnim.SetBool("Enchufao", true);
+            //audio.Effect(Wint);
         }
         else
         {

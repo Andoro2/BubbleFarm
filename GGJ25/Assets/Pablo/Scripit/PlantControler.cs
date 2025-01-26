@@ -10,6 +10,10 @@ public class PlantControler : MonoBehaviour
     private BillboardController Body;
     private Rigidbody rig_;
     public Vector3 SizeOfobject;
+    private AudioManager audio;
+    public AudioClip audioGrow;
+    public AudioClip audioDamage;
+    public AudioClip audioDeath;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +23,7 @@ public class PlantControler : MonoBehaviour
         Body = GetComponentInChildren<BillboardController>();
         rig_ = GetComponent<Rigidbody>();
         Body.ChangeImagen(Sprites[Estado]);
+        audio = GameObject.Find("AudioSource").GetComponent<AudioManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,13 +32,13 @@ public class PlantControler : MonoBehaviour
         {
 
             BubbleMovement avg = other.GetComponent<BubbleMovement>();
-            avg.PopSystem();
 
             if(avg.Type- 1 == Estado)
             {
                 //Debug.Log("Growing");
                 Estado++;
                 Body.ChangeImagen(Sprites[Estado]);
+                audio.Effect(audioGrow);
             }
             else if(avg.Type < 0)
             {
@@ -42,6 +47,11 @@ public class PlantControler : MonoBehaviour
                 if (Estado < 0)
                 {
                     Estado = 0;
+                    audio.Effect(audioDeath);
+                }
+                else
+                {
+                    audio.Effect(audioDamage);
                 }
                 Body.ChangeImagen(Sprites[Estado]);
             }
