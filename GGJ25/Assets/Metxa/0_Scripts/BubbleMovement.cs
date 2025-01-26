@@ -57,7 +57,15 @@ public class BubbleMovement : MonoBehaviour
         else Direction = false;
 
         Shadow = transform.GetChild(2).transform.gameObject;
-        Shadow.transform.position = new Vector3(Shadow.transform.position.x, GroundY, Shadow.transform.position.z);
+        if(transform.position.z < 0)
+        {
+            Shadow.transform.position = new Vector3(Shadow.transform.position.x, GroundY, Shadow.transform.position.z - 2);
+        }
+        else
+        {
+            Shadow.transform.position = new Vector3(Shadow.transform.position.x, GroundY + 0.2f, Shadow.transform.position.z + 1);
+        }
+        
         ShadowYValue = Shadow.transform.position.y;
     }
 

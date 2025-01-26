@@ -24,8 +24,10 @@ public class BubbleManager : MonoBehaviour
         if(SpawnTimer < 0 )
         {
             float[] possibleZValues = { -5.1f, -2.1f, 0.89f };
-            Vector3 position = new Vector3(Random.Range(-2, 2), 9, possibleZValues[Random.Range(0, possibleZValues.Length)]);
-            Instantiate(Bubble, position, Quaternion.identity);
+            int tmp = Random.Range(0, possibleZValues.Length);
+            Vector3 position = new Vector3(Random.Range(-2, 2), 9, possibleZValues[tmp]);
+            GameObject avg = Instantiate(Bubble, position, Quaternion.identity);
+
             SpawnTimer = SpawnTime;
         }
     }

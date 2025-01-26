@@ -10,6 +10,7 @@ public class FanController : MonoBehaviour
     public GameObject FanRight;
     public List<Sprite> FanIcon;
     public Animator FanAnim;
+    public Animator WintAnim;
     public AudioManager audio;
     public AudioClip Move;
     //public AudioClip Wint;
@@ -20,6 +21,7 @@ public class FanController : MonoBehaviour
         FanLeft.GetComponent<Image>().sprite = FanIcon[0];
         audio = GameObject.Find("AudioSource").GetComponent<AudioManager>();
         FanAnim = transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Animator>();
+        WintAnim = transform.GetChild(1).GetComponent<Animator>();
     }
 
     void Update()
@@ -82,11 +84,14 @@ public class FanController : MonoBehaviour
         if (GetComponent<BoxCollider>().enabled)
         {
             FanAnim.SetBool("Enchufao", true);
-            //audio.Effect(Wint);
+            WintAnim.SetBool("Viento", true);
+            transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = true;
         }
         else
         {
+            WintAnim.SetBool("Viento", false);
             FanAnim.SetBool("Enchufao", false);
+            transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = false;
         }
     }
     void OnTriggerEnter(Collider other)
