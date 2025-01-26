@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class PlantControler : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PlantControler : MonoBehaviour
     public AudioClip audioGrow;
     public AudioClip audioDamage;
     public AudioClip audioDeath;
+    private GameObject Particula;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +26,8 @@ public class PlantControler : MonoBehaviour
         rig_ = GetComponent<Rigidbody>();
         Body.ChangeImagen(Sprites[Estado]);
         audio = GameObject.Find("AudioSource").GetComponent<AudioManager>();
+
+        Particula = transform.GetChild(1).transform.gameObject;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,6 +36,7 @@ public class PlantControler : MonoBehaviour
         {
 
             BubbleMovement avg = other.GetComponent<BubbleMovement>();
+            avg.PopSystem();
 
             if(avg.Type- 1 == Estado)
             {
@@ -39,10 +44,13 @@ public class PlantControler : MonoBehaviour
                 Estado++;
                 Body.ChangeImagen(Sprites[Estado]);
                 audio.Effect(audioGrow);
+
+
+                Particula.SetActive(true);
+                Particula.transform.SetParent(null);
             }
             else if(avg.Type < 0)
             {
-                //Debug.Log("Dying");
                 Estado += avg.Type;
                 if (Estado < 0)
                 {

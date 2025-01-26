@@ -5,6 +5,7 @@ using UnityEngine;
 public class ParticulaDestroy : MonoBehaviour
 {
     private ParticleSystem _particleSystem;
+    public bool Destruye = true;
     void Start()
     {
         _particleSystem = GetComponent<ParticleSystem>();
@@ -13,7 +14,8 @@ public class ParticulaDestroy : MonoBehaviour
     {
         if (!_particleSystem.IsAlive())
         {
-            Destroy(this.gameObject);
+            if (Destruye) Destroy(this.gameObject);
+            else gameObject.SetActive(false);
         }
     }
 }

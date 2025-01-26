@@ -36,6 +36,7 @@ public class ShotControler : MonoBehaviour
                 {
                     if (hit.transform.CompareTag("Bubble"))
                     {
+                        hit.transform.gameObject.GetComponent<BubbleMovement>().PopSystem();
                         Destroy(hit.transform.gameObject);
                         Debug.DrawRay(coneOrigin, rayDirection * hit.distance, Color.green);
                     }
