@@ -633,6 +633,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6449263237890523824, guid: 5205cf20d13c13f40899af62b2014846, type: 3}
+      propertyPath: initialVelocity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7449205126352442678, guid: 5205cf20d13c13f40899af62b2014846, type: 3}
       propertyPath: m_Name
       value: B1 (1)
