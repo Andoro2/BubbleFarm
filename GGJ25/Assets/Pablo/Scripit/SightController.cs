@@ -20,6 +20,8 @@ public class SightController : MonoBehaviour
     public float ActualRangeMax;
     public float IntervalSpeedDescres;
     public Vector3 StartingScale;
+    bool animation;
+    bool index;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +34,8 @@ public class SightController : MonoBehaviour
         ActualRangeMax = maxRange;
         ActualRangeMin = minRange;
         hitimage.transform.localScale = StartingScale;
+        animation = false;
+        index=true;
     }
 
     // Update is called once per frame
@@ -55,8 +59,31 @@ public class SightController : MonoBehaviour
                 ActualRangeMin = minRange;
                 hitimage.transform.localScale = StartingScale;
             }
+
+            animation = true;
         }
-        
+
+        if (animation)
+        {
+                
+                if (index)
+                {
+
+                    transform.GetChild(0).GetChild(6).localScale = new Vector3(transform.GetChild(0).GetChild(6).localScale.x - 0.01f, transform.GetChild(0).GetChild(6).localScale.y - 0.01f, transform.GetChild(0).GetChild(6).localScale.z - 0.01f);
+                    if (transform.GetChild(0).GetChild(6).localScale.x < 0.02f)
+                    {
+                        index = false;
+                    }
+                }
+                else
+                {
+                    Debug.Log(transform.GetChild(0).GetChild(6).localScale.x);
+
+                        animation = false;
+                        index = true;
+                        transform.GetChild(0).GetChild(6).localScale = new Vector3(0.2f, 0.35f, 0.15f);
+                } 
+        }
 
         if(!stop){
             if (right)
