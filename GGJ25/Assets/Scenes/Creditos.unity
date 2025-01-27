@@ -501,7 +501,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: e33182e8bdbdd3c499b95fb69a934dad, type: 3}
     - target: {fileID: 6449263237890523824, guid: 5205cf20d13c13f40899af62b2014846, type: 3}
       propertyPath: initialVelocity
-      value: 0.1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7449205126352442678, guid: 5205cf20d13c13f40899af62b2014846, type: 3}
       propertyPath: m_Name
@@ -572,7 +572,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: addc2926453ffb444aa4f03270198a47, type: 3}
     - target: {fileID: 6449263237890523824, guid: 5205cf20d13c13f40899af62b2014846, type: 3}
       propertyPath: initialVelocity
-      value: 0.1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7449205126352442678, guid: 5205cf20d13c13f40899af62b2014846, type: 3}
       propertyPath: m_Name
@@ -655,7 +655,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 9681a8bbe8c7f004e8ee1e9b031e1cdd, type: 3}
     - target: {fileID: 6449263237890523824, guid: 5205cf20d13c13f40899af62b2014846, type: 3}
       propertyPath: initialVelocity
-      value: 0.1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7449205126352442678, guid: 5205cf20d13c13f40899af62b2014846, type: 3}
       propertyPath: m_Name
@@ -854,7 +854,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: b04db883ac5160840befdf30cfda080a, type: 3}
     - target: {fileID: 6449263237890523824, guid: 5205cf20d13c13f40899af62b2014846, type: 3}
       propertyPath: initialVelocity
-      value: 0.1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7449205126352442678, guid: 5205cf20d13c13f40899af62b2014846, type: 3}
       propertyPath: m_Name
@@ -1017,7 +1017,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 6f78d8aea6cbd85448b303667b539888, type: 3}
     - target: {fileID: 6449263237890523824, guid: 5205cf20d13c13f40899af62b2014846, type: 3}
       propertyPath: initialVelocity
-      value: 0.1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7449205126352442678, guid: 5205cf20d13c13f40899af62b2014846, type: 3}
       propertyPath: m_Name
@@ -1196,7 +1196,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: e2521295dbe723e4f9a93baa5224ef33, type: 3}
     - target: {fileID: 6449263237890523824, guid: 5205cf20d13c13f40899af62b2014846, type: 3}
       propertyPath: initialVelocity
-      value: 0.1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6724786876616672759, guid: 5205cf20d13c13f40899af62b2014846, type: 3}
       propertyPath: m_IsTrigger

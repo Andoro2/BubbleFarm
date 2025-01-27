@@ -14,7 +14,7 @@ public class TutoScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown(("Down")))
+        if (Input.anyKey)
         {
             Time.timeScale = 1f;
             hitter.stop = false;
