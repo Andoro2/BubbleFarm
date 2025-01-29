@@ -46,6 +46,7 @@ public class SightController : MonoBehaviour
             if (hitbarr.value>ActualRangeMin && hitbarr.value<ActualRangeMax)
             {
                 gun.timer = gun.TimeOfShot;
+                animation = true;
                 if (ActualRangeMin<0.3f && ActualRangeMax>0.7f)
                 {
                     ActualRangeMax -= IntervalSpeedDescres;
@@ -60,7 +61,6 @@ public class SightController : MonoBehaviour
                 hitimage.transform.localScale = StartingScale;
             }
 
-            animation = true;
         }
 
         if (animation)

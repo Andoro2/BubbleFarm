@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8866798256857394728}
   - component: {fileID: 7451634651265951480}
-  - component: {fileID: 5300499390832652227}
+  - component: {fileID: 7028826767662166977}
   m_Layer: 0
   m_Name: Burbuja
   m_TagString: Bubble
@@ -71,8 +71,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4af39a7679d964247b02d6e82eeea623, type: 3}
   GroundY: 0.5
   Dyingheight: 1.28
---- !u!65 &5300499390832652227
-BoxCollider:
+--- !u!135 &7028826767662166977
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -90,8 +90,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.61, y: 1.6, z: 0.20647927}
-  m_Center: {x: 0, y: 0, z: -0.053239636}
+  m_Radius: 0.5988215
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &730231813540596084
 GameObject:
   m_ObjectHideFlags: 0

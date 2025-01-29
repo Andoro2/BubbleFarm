@@ -40,7 +40,10 @@ public class PlantControler : MonoBehaviour
 
             if(avg.Type- 1 == Estado)
             {
-                //Debug.Log("Growing");
+                if(Estado==0){
+                    Body.transform.position = new Vector3(Body.transform.position.x, Body.transform.position.y, Body.transform.position.z + 2.5f);
+                }
+                
                 Estado++;
                 Body.ChangeImagen(Sprites[Estado]);
                 audio.Effect(audioGrow);
@@ -51,17 +54,21 @@ public class PlantControler : MonoBehaviour
             }
             else if(avg.Type < 0)
             {
-                Estado += avg.Type;
-                if (Estado < 0)
-                {
-                    Estado = 0;
-                    audio.Effect(audioDeath);
+                if (Estado != 0) {
+                    Estado += avg.Type;
+                    if (Estado <= 0)
+                    {
+                        Body.transform.position = new Vector3(Body.transform.position.x, Body.transform.position.y, Body.transform.position.z - 2.5f);
+                        Estado = 0;
+                        audio.Effect(audioDeath);
+
+                    }
+                    else
+                    {
+                        audio.Effect(audioDamage);
+                    }
+                    Body.ChangeImagen(Sprites[Estado]);
                 }
-                else
-                {
-                    audio.Effect(audioDamage);
-                }
-                Body.ChangeImagen(Sprites[Estado]);
             }
 
             Destroy(other.transform.gameObject);
