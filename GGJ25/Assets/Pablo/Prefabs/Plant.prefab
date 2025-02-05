@@ -4902,6 +4902,8 @@ MonoBehaviour:
   audioGrow: {fileID: 8300000, guid: caab567cb7ab8f14a98e316c71c6fcad, type: 3}
   audioDamage: {fileID: 8300000, guid: f2f098e0b88ae794d941b9c978a7b62f, type: 3}
   audioDeath: {fileID: 8300000, guid: a8e2fff258edcfb43b12f18d116d4db0, type: 3}
+  Bubble: {fileID: 658841766616250585, guid: 205bd21747a54534eba0f6d0e2012fd6, type: 3}
+  SpawnTime: 16
 --- !u!65 &5516008300592831240
 BoxCollider:
   m_ObjectHideFlags: 0

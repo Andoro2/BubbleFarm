@@ -15,7 +15,6 @@ public class BubbleMovement : MonoBehaviour
     BillboardController BC;
     BillboardController BCitem;
     private GameObject Shadow, Particula;
-    private float ShadowYValue;
     public float Dyingheight;
 
     void Start()
@@ -57,16 +56,7 @@ public class BubbleMovement : MonoBehaviour
         else Direction = false;
 
         Shadow = transform.GetChild(2).transform.gameObject;
-        if(transform.position.z < 0)
-        {
-            Shadow.transform.position = new Vector3(Shadow.transform.position.x, GroundY, Shadow.transform.position.z - 2);
-        }
-        else
-        {
-            Shadow.transform.position = new Vector3(Shadow.transform.position.x, GroundY + 0.2f, Shadow.transform.position.z + 1);
-        }
-        
-        ShadowYValue = Shadow.transform.position.y;
+        Shadow.transform.position = new Vector3(transform.position.x, 0, transform.position.z);
     }
 
     void Update()
@@ -81,14 +71,6 @@ public class BubbleMovement : MonoBehaviour
             Shadow.transform.Translate(Vector3.up * DownSpeed * Time.deltaTime);
         }
 
-        if (Direction)
-        {
-            transform.Translate(Vector3.right * SideSpeed * Time.deltaTime);
-        }
-        else
-        {
-            transform.Translate(Vector3.left * SideSpeed * Time.deltaTime);
-        }
     }
     public void PopSystem()
     {

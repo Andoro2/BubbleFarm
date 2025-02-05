@@ -5,13 +5,14 @@ using UnityEngine;
 public class BubbleManager : MonoBehaviour
 {
     public GameObject Bubble;
-    public float SpawnTime = 5f, SpawnTimer;
+    public float SpawnTime = 5f;
+    private float Timer;
     private List<GameObject> Plants = new List<GameObject>();
     private int PlantLevels = 0; // 15 plantas * 4 niveles = 60
 
     void Start()
     {
-        SpawnTimer = SpawnTime;
+        Timer = SpawnTime;
 
         GameObject[] plantsArray = GameObject.FindGameObjectsWithTag("Plant");
 
@@ -20,15 +21,15 @@ public class BubbleManager : MonoBehaviour
 
     void Update()
     {
-        SpawnTimer -= Time.deltaTime;
-        if(SpawnTimer < 0 )
+        Timer -= Time.deltaTime;
+        if(Timer < 0 )
         {
-            float[] possibleZValues = { -5.1f, -2.1f, 0.89f };
+            float[] possibleZValues = { -2.82f, 0.18f, 3.18f };
             int tmp = Random.Range(0, possibleZValues.Length);
             Vector3 position = new Vector3(Random.Range(-2, 2), 9, possibleZValues[tmp]);
             GameObject avg = Instantiate(Bubble, position, Quaternion.identity);
 
-            SpawnTimer = SpawnTime;
+            Timer = SpawnTime;
         }
     }
 

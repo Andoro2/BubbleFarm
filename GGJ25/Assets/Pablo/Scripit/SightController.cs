@@ -8,9 +8,6 @@ public class SightController : MonoBehaviour
     private Slider hitbarr;
     private bool right;
     public float speed;
-    public float coneAngle = 45f; // Ángulo del cono (en grados)
-    public float coneDistance = 10f; // Distancia máxima del cono
-    public int rayCount = 10; // Número de rayos dentro del cono
     public ShotControler gun;
     private Transform hitimage;
     public float minRange;
@@ -41,27 +38,32 @@ public class SightController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1")==true)
+        if(Time.timeScale != 0)
         {
-            if (hitbarr.value>ActualRangeMin && hitbarr.value<ActualRangeMax)
+            if (Input.GetButtonDown("Fire1") == true)
             {
-                gun.timer = gun.TimeOfShot;
-                animation = true;
-                if (ActualRangeMin<0.3f && ActualRangeMax>0.7f)
+                if (hitbarr.value > ActualRangeMin && hitbarr.value < ActualRangeMax)
                 {
-                    ActualRangeMax -= IntervalSpeedDescres;
-                    ActualRangeMin += IntervalSpeedDescres;
-                    hitimage.localScale = new Vector3(hitimage.localScale.x - ((IntervalSpeedDescres*StartingScale.x)/0.2f), StartingScale.y, StartingScale.z);
+                    gun.Shot = true;
+                    animation = true;
+                    if (ActualRangeMin < 0.3f && ActualRangeMax > 0.7f)
+                    {
+                        ActualRangeMax -= IntervalSpeedDescres;
+                        ActualRangeMin += IntervalSpeedDescres;
+                        hitimage.localScale = new Vector3(hitimage.localScale.x - ((IntervalSpeedDescres * StartingScale.x) / 0.2f), StartingScale.y, StartingScale.z);
 
+                    }
                 }
-            }
-            else {
-                ActualRangeMax = maxRange;
-                ActualRangeMin = minRange;
-                hitimage.transform.localScale = StartingScale;
-            }
+                else
+                {
+                    ActualRangeMax = maxRange;
+                    ActualRangeMin = minRange;
+                    hitimage.transform.localScale = StartingScale;
+                }
 
+            }
         }
+       
 
         if (animation)
         {
@@ -70,7 +72,7 @@ public class SightController : MonoBehaviour
                 {
 
                     transform.GetChild(0).GetChild(6).localScale = new Vector3(transform.GetChild(0).GetChild(6).localScale.x - 0.01f, transform.GetChild(0).GetChild(6).localScale.y - 0.01f, transform.GetChild(0).GetChild(6).localScale.z - 0.01f);
-                    if (transform.GetChild(0).GetChild(6).localScale.x < 0.02f)
+                    if (transform.GetChild(0).GetChild(6).localScale.x < 0.002f)
                     {
                         index = false;
                     }
@@ -81,7 +83,7 @@ public class SightController : MonoBehaviour
 
                         animation = false;
                         index = true;
-                        transform.GetChild(0).GetChild(6).localScale = new Vector3(0.2f, 0.35f, 0.15f);
+                        transform.GetChild(0).GetChild(6).localScale = new Vector3(0.086f, 0.15f, 0.064f);
                 } 
         }
 

@@ -4,72 +4,39 @@ using UnityEngine;
 
 public class ShotControler : MonoBehaviour
 {
-    public float coneAngle; // Ángulo del cono en grados
-    public float coneDistance; // Distancia máxima del cono
-    public int raysCount; // Número total de rayos a lanzar
-    public int timer;
-    public int TimeOfShot;
+    public Camera mainCamera;
+    public bool Shot;
+    //public int RangeOfShot = 5;
     // Start is called before the first frame update
     void Start()
     {
-        timer = 0;
+        if (mainCamera == null)
+        {
+            mainCamera = Camera.main;
+        }
+
+        Shot = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (timer>0)
+        if (Shot)
         {
-            Vector3 coneOrigin = new Vector3(transform.position.x,transform.position.y+1,transform.position.z); // Origen del cono
-            Vector3 coneDirection = transform.forward; // Dirección central del cono
+            Vector3 PositionOfRay = new Vector3(Input.mousePosition.x /*+  Random.Range(-RangeOfShot, RangeOfShot)*/, Input.mousePosition.y /*+  Random.Range(-RangeOfShot, RangeOfShot)*/, Input.mousePosition.z);
+            Ray ray = mainCamera.ScreenPointToRay(PositionOfRay);
+            RaycastHit hit;
 
-            for (int i = 0; i < raysCount; i++)
+            Debug.DrawRay(ray.origin, ray.direction * 100,new Color(255,0,0) , 2f);
+
+            if (Physics.Raycast(ray, out hit))
             {
-                // Generar una dirección dentro del cono
-                Vector3 rayDirection = GetDirectionInCone(coneDirection, coneAngle);
-
-                // Realizar el Raycast
-                Ray coneRay = new Ray(coneOrigin, rayDirection);
-                RaycastHit hit;
-
-                if (Physics.Raycast(coneRay, out hit, coneDistance))
+                if (hit.collider.gameObject.CompareTag("Bubble"))
                 {
-                    if (hit.transform.CompareTag("Bubble"))
-                    {
-                        hit.transform.gameObject.GetComponent<BubbleMovement>().PopSystem();
-                        Destroy(hit.transform.gameObject);
-                        Debug.DrawRay(coneOrigin, rayDirection * hit.distance, Color.green);
-                    }
-                }
-                else
-                {
-                    Debug.DrawRay(coneOrigin, rayDirection * coneDistance, Color.red);
+                    Destroy(hit.collider.gameObject);
                 }
             }
-            timer--;
+            Shot = false;
         }
-    }
-
-    Vector3 GetDirectionInCone(Vector3 forwardDirection, float angle)
-    {
-        // Convertir el ángulo a radianes
-        float coneAngleRadians = Mathf.Deg2Rad * angle;
-
-        // Generar un ángulo aleatorio en el rango [0, 2?] para la rotación alrededor del eje
-        float azimuth = Random.Range(0f, 2f * Mathf.PI);
-
-        // Generar un ángulo aleatorio de elevación dentro del rango del cono
-        float elevation = Random.Range(0f, coneAngleRadians);
-
-        // Convertir coordenadas esféricas a cartesianas para generar el vector
-        float x = Mathf.Sin(elevation) * Mathf.Cos(azimuth);
-        float y = Mathf.Sin(elevation) * Mathf.Sin(azimuth);
-        float z = Mathf.Cos(elevation);
-
-        // Generar la dirección en el espacio local del cono
-        Vector3 localDirection = new Vector3(x, y, z);
-
-        // Rotar la dirección local para alinearla con la dirección principal del cono
-        return Quaternion.LookRotation(forwardDirection) * localDirection;
     }
 }

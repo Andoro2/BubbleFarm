@@ -17,6 +17,10 @@ public class PlantControler : MonoBehaviour
     public AudioClip audioDeath;
     private GameObject Particula;
 
+    public GameObject Bubble;
+    public float SpawnTime = 5f;
+    private float Timer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +32,20 @@ public class PlantControler : MonoBehaviour
         audio = GameObject.Find("AudioSource").GetComponent<AudioManager>();
 
         Particula = transform.GetChild(1).transform.gameObject;
+
+        Timer = Random.Range(1,SpawnTime);
+    }
+
+    private void Update()
+    {
+        Timer -= Time.deltaTime;
+        if (Timer < 0)
+        {
+            Vector3 position = new Vector3(transform.position.x, 12,transform.position.z-0.1f);
+            GameObject avg = Instantiate(Bubble, position, Quaternion.identity);
+
+            Timer = Random.Range(1, SpawnTime);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,6 +63,7 @@ public class PlantControler : MonoBehaviour
                 }
                 
                 Estado++;
+                GameObject.Find("CanvasUI").transform.GetChild(0).Find("Score").GetComponent<ScoreController>().score += 100 * Estado;
                 Body.ChangeImagen(Sprites[Estado]);
                 audio.Effect(audioGrow);
 
